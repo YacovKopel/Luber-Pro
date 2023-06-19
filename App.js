@@ -31,7 +31,6 @@ const Stack =createNativeStackNavigator()
             headerShown: false,
           }}/>
         </Stack.Navigator>
-    <HomeScreen/>
     </SafeAreaProvider>
     </NavigationContainer>
     </Provider>
