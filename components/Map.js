@@ -3,11 +3,15 @@ import React from 'react'
 import MapView, {Marker} from 'react-native-maps'
 import tw from 'tailwind-react-native-classnames'
 import { useSelector } from 'react-redux'
-import { selectOrigin } from '../slices/navSlice'
+import { selectDestination, selectOrigin } from '../slices/navSlice'
+import MapViewDirections from 'react-native-maps-directions'
+import { API_KEY } from "@env";
 
 
 const Map = () => {
     const origin= useSelector(selectOrigin)
+    const destination =useSelector(selectDestination)
+
   return (
     <MapView 
     style={tw`flex-1`}
@@ -19,6 +23,16 @@ const Map = () => {
       longitudeDelta: 0.005,
     }}
   >
+    {origin && destination && (
+    <MapViewDirections
+    origin={origin.description}
+    destination= {destination.description}
+    apikey={API_KEY}
+    strokeColor='black'
+    strokeWidth={3}
+
+    />
+)}
 {origin?.location && (
     <Marker
         coordinate = {{
