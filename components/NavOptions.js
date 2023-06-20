@@ -30,7 +30,10 @@ const origin =useSelector(selectOrigin)
     keyExtractor={(item) => item.id}
     renderItem={({item})=>
 <TouchableOpacity
-style={tw `p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}
+style={[
+  tw `p-2 pl-6 pb-8 pt-4 m-2 w-40`,
+  item.id === 1 ? tw `bg-gray-200` : tw `bg-pink-500`
+]}
 disabled={!origin}
 onPress={()=> navigation.navigate(item.screen)}>
       <View 
