@@ -8,14 +8,14 @@ import { selectOrigin } from '../slices/navSlice'
 
 const data=[{
     id:1,
-    title: "Get A Ride",
+    title: "Get A Ride with Uber",
     image: "https://links.papareact.com/3pn",
     screen: "MapScreen"
 },
 {   id:2,
-    title: "Order Food",
-    image: "https://links.papareact.com/28w",
-    screen: "EatsScreen"
+    title: "Get A Ride with Lyft",
+    image: "https://links.papareact.com/3pn",
+    screen: "MapScreen"
 }]
 
 
@@ -33,7 +33,7 @@ const origin =useSelector(selectOrigin)
 style={tw `p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}
 disabled={!origin}
 onPress={()=> navigation.navigate(item.screen)}>
-    <View 
+      <View 
     style= {tw `${!origin && "opacity-20"}`}>
         <Image
         style={{width:120, height:120, resizeMode: "contain"}}

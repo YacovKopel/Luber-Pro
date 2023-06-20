@@ -15,13 +15,11 @@ const HomeScreen = () => {
       <View style={tw`p-5`}>
         <Image
           style={{
-            width: 100,
-            height: 100,
+            width: 150,
+            height: 150,
             resizeMode: "contain",
           }}
-          source={{
-            uri: "https://links.papareact.com/gzs",
-          }}
+          source={require("../assets/luber.jpg")}
         />
 
         <GooglePlacesAutocomplete
@@ -35,8 +33,6 @@ const HomeScreen = () => {
             },
           }}
           onPress={(data, details=null) => {
-            console.log(details.geometry.location)
-            // console.log(data.description)
             dispatch(setOrigin({
                 location: details.geometry.location,
                 description: data.description
