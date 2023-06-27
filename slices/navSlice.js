@@ -5,6 +5,7 @@ const initialState = {
   destination: null,
   travelTimeInformation: null,
 };
+
 // Push into the data layer
 export const navSlice = createSlice({
   name: "nav",
